@@ -1,0 +1,5 @@
+---
+- name: Execute spec to run tests
+  command: bash -lc "rspec /tmp/ruby_files/helloworld_spec.rb"
+
+ 

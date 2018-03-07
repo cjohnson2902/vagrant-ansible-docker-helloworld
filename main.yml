@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: yes
+
+  gather_facts: False
+
+  pre_tasks:
+    - name: Install python for Ansible
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      changed_when: False
+    - name: Install pip for Ansible
+      raw: apt -y update && apt install -y python-pip
+    - setup: # aka gather_facts
+
+  roles:
+    - role: angstwad.docker_ubuntu
+    - role: geerlingguy.ruby
+
+  tasks:
+    - include: provisioning/setup.yml
+    - include: provisioning/docker.yml
+    - include: testing/test_setup.yml
+    - include: testing/testing.yml

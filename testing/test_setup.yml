@@ -1,0 +1,9 @@
+---
+- name: Upload the Ruby test files to the docker host
+  synchronize: src=testing/ruby_files dest=/tmp
+ 
+- name: Ensure Ruby setup for testing
+  command: bash -lc "gem install bundler"
+
+- name: Ensure Ruby setup for testing
+  command: bash -lc "bundle install --gemfile=/tmp/ruby_files/Gemfile"
