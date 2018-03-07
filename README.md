@@ -25,5 +25,6 @@ Expected result:
 Tests:  
 Some serverspec tests will run automatically at the end of the Ansible run to verify:
  * The correct OS (library/alpine) has been deployed to the Docker container
- * The Docker container is listening on port 80
+ * The Docker container is listening on port 80  
+
 If for some reason any of the tests fails then the Ansible deploy will also fail and the reason will be given in the logs.
