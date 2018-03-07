@@ -2,17 +2,17 @@
 Use Vagrant, Ansible, Docker and Nginx to setup a HelloWorld webpage
 
 Prerequisites:
-  * You should have Virtual box setup.
-  * You should have Vagrant installed.
-  * You should have Ansible installed.
+* You should have Virtual box setup.
+* You should have Vagrant installed.
+* You should have Ansible installed.
 
 Execution:
-  * Navigate to the directory where the Vagrantfile is.
-  * Run these commands to setup the external roles:
-    `ansible-galaxy install angstwad.docker_ubuntu`.
-    `ansible-galaxy install geerlingguy.ruby`
-  * Run this command to setup the environment:
-    `vagrant up`
+* Navigate to the directory where the Vagrantfile is.
+* Run these commands to setup the external roles:  
+`ansible-galaxy install angstwad.docker_ubuntu`  
+`ansible-galaxy install geerlingguy.ruby`
+* Run this command to build a VM, deploy the packages required for running the container and setup the Docker environment:  
+`vagrant up`
 
 Usage:
   * Request the URL of your browser:
@@ -22,7 +22,7 @@ Expected result:
   * You should be greeted with:
     `Hello World!`
 
-Tests:
+Tests:  
 Some serverspec tests will run automatically at the end of the Ansible run to verify:
  * The correct OS (library/alpine) has been deployed to the Docker container
  * The Docker container is listening on port 80
